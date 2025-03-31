@@ -1,0 +1,105 @@
+:root {
+  --accent-color: #f5a841;
+}
+
+section [class^="container"] {
+  padding: 4rem 2rem;
+}
+@media screen and (min-width: 1024px) {
+  section [class^="container"] {
+    padding: 4rem;
+  }
+  nav [class^="container"] {
+    padding: 0 4rem;
+  }
+}
+
+section:not(:first-of-type) {
+  text-align: center;
+}
+
+section:nth-child(2n) {
+  background-color: #ecf2ff;
+}
+
+.container a {
+  color:#f5a841;
+  text-decoration: none;
+}
+.container a:hover {
+  color: var(--accent-color);
+}
+
+section .card,
+.btn-outline-dark {
+  border: 2px solid #000000;
+  box-shadow: 4px 4px #000000;
+  transition: all 0.4s;
+}
+.btn-outline-dark:hover {
+  box-shadow: 4px 4px var(--accent-color);
+}
+
+.question{
+  font-weight:600;
+  text-align: left;
+}
+
+.answer{
+  text-align: left;
+}
+ol li{
+  text-align: left;
+}
+/* NAVBAR */
+
+.navbar {
+  background-color: #ffffff;
+}
+
+.navbar-nav .nav-link {
+  color: #000000;
+  font-size: 1.1rem;
+  transition: all 0.5s;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--accent-color);
+}
+@media screen and (min-width: 1024px) {
+  .navbar-nav .nav-item {
+    padding: 0 1rem;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+/* HERO */
+
+section.hero {
+  padding-top: 72px;
+}
+@media screen and (max-width: 576px) {
+  section.hero {
+    text-align: center;
+  }
+  section.hero img {
+    width: 80%;
+    margin: 0.5rem 0;
+  }
+}
+
+
+/* ABOUT */
+@media screen and (min-width: 1024px) {
+  section.about .container,
+  section.testimonials .container {
+    width: 60%;
+  }
+}
+
+/* CONTACT */
+section.contact .social-media a {
+  padding: 0 0.5rem;
+  font-size: 1.3rem;
+}
