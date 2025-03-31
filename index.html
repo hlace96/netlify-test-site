@@ -60,13 +60,21 @@
         <h2 class="display-5 fw-bold mb-4">Questions</h2>
         <p class="question">Q1: Talk about how you made your site and why you chose the tools you did. Briefly explain one challenge you experienced in setting up this site and how you overcame it. </p>
         <p class="answer">
-          <b>A: </b> sapien vel nulla accumsan, sit amet viverra metus ornare. Mauris iaculis ex vitae mollis pulvinar. Phasellus fringilla neque sed ligula lacinia iaculis.
+          <b>A: </b> I created a simple one-page website with scrolling sections. It includes a brief introduction about me and a section where I answered the required questions. I chose to use HTML, CSS, and the Bootstrap framework because they allow for quick and efficient styling while ensuring responsiveness. Additionally, I have experience with these technologies, making the development process smoother.
+          <br><br>
+One challenge I encountered was ensuring that all sections scrolled smoothly and aligned correctly on different screen sizes. At first, some sections didn’t display properly on smaller screens, but I resolved this by adjusting Bootstrap's grid system and using CSS media queries.
+<br><br>
+Deploying the site on Netlify was straightforward. After connecting my GitHub repository, Netlify handled the deployment automatically. Within a minute, I was able to preview my site live. The seamless integration with GitHub made updates quick and hassle-free, allowing me to focus on refining the content and layout.
         </p>
         <hr>
         <p class="question">Q2: What did you think of our service during the time you used it? Provide some constructive criticism or some features that impressed you.</p>
         <p class="answer">
-          <b>A: </b> sapien vel nulla accumsan, sit amet viverra metus ornare. Mauris iaculis ex vitae mollis pulvinar. Phasellus fringilla neque sed ligula lacinia iaculis.
-        </p>
+          <b>A: </b> 
+          Overall, I had a great experience using Netlify for deploying my site. The setup process was incredibly smooth, and I appreciated how quickly my site went live after connecting my GitHub repository. The automatic deployment feature made it easy to update changes without any manual intervention, which was very convenient.
+
+          One feature that impressed me was the continuous deployment, which ensured that any updates I pushed to GitHub were automatically reflected on my live site.
+          
+          As for constructive feedback, while the platform is user-friendly, I think providing more built-in templates or UI components for basic static sites could help beginners get started even faster.   </p>
         <hr>
         <p class="question">Q3: Rank your 5 favorite and 5 least favorite activities from this list: <a href="https://gist.github.com/laurajodz/592402a6336410377dee1a744af846ab" target="_blank">https://gist.github.com/laurajodz/592402a6336410377dee1a744af846ab</a>
         </p>
@@ -117,7 +125,23 @@
           <hr>
         <p class="question">Q8: Please attempt to deploy a function on our service. This need not be complicated. It could be "Hello World". Note that failure to deploy is not failing the exercise! Whether you have trouble or not, please describe what you experienced and how you attempted to troubleshoot any issues you encountered.</p>
         <p class="answer">
-          <b>A: </b>
+          <b>A: Click the button</b></p>
+
+          <button id="fetchMessage">Click Me</button>
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("fetchMessage").addEventListener("click", function () {
+            fetch("/.netlify/functions/hello")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("message").innerText = data.message;
+                })
+                .catch(error => console.error("Error fetching function:", error));
+        });
+    </script>
+
+
           <hr>
         <p class="question">Q9: We understand you don't know anything about our internal procedures at this stage, but we want you to explain at a high level how you'd react to this situation: You receive a report of a severe security issue on www.netlify.com. You can't immediately confirm the report, so what steps might you take to investigate or substantiate the report? What might you say to the reporter, even though we haven't confirmed their assertion yet, that will instill confidence that our business is very concerned about security? You believe there is a reasonable chance the report is correct and the problem is very large and impactful. How might you escalate?</p>
         <p class="answer">
